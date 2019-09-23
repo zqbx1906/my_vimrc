@@ -97,14 +97,16 @@ let g:quickfixname = 1
 function QuickfixFunc()
 	if g:quickfixname
 		let g:quickfixname = 0
-		exec ":cw"
+		exec ":copen 20"
 	else
 		let g:quickfixname = 1
 		exec ":ccl"
 	endif
 endfunction
 
-map <F8>    <ESC>:call QuickfixFunc()<CR><ESC>
+nnoremap <F8>    <ESC>:call QuickfixFunc()<CR><ESC>
+nnoremap <F9>    <ESC>:cn<CR><ESC>    "下一项
+nnoremap <F10>   <ESC>:cp<CR><ESC>    "上一项
 
 
 
